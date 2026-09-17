@@ -49,3 +49,64 @@ table {
 
 /****************************************
 CSS Reset End
+****************************************/
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+}
+
+/***********************************
+                NAV STYLES
+***********************************/
+
+/* The > is the direct child selector, which means only select the 
+element after if it is directly inside of the first element */
+nav > ul {
+  display: flex;}
+  /* one way to spread out the elements is justify content: space-between; */
+  nav > ul > li {
+    flex-grow: 1;
+    /* flex glow allows elements to expand to fill up the space */  
+
+  }
+  nav > ul > li:first-child {
+    /* this will affect only the first li */
+    flex-grow:3;
+  }
+
+  nav ul li ul{
+display: none;
+  }
+
+
+  nav ul a {
+    padding:5px;
+    /* 1 value adds padding on all 4 slides of the element */
+    display: block;
+    /* this changes the anchor tags from inline to block, so they will be as wide as 
+    they can, and you can add padding on the top and bottom */
+    background-color: #ab0303;
+  }
+
+  nav ul a:hover, nav ul a:active{
+    background-color: #4bffe4;
+  }
+
+  /*    dropdown code   */
+
+  nav ul li ul{
+display: none;
+  }
+/* you have to have a parent with position relative to properly 
+contain anything with position absolute inside of it */
+  nav ul li{
+    position: relative;
+  }
+  nav ul li:hover ul{
+    display: block;
+    /* this will make it visible */
+    position: absolute;
+    width:100%;
+
+  }
